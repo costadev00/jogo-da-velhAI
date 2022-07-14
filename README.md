@@ -10,4 +10,4 @@ Por exemplo, se um jogador ganha, recebe +1, o outro que perde recebe -1. </p>
 e min tentando o menor possível.</p>
 <p> Dessa forma criamos um jogador "master" do qual NÃO É POSSÍVEL VENCER, pois para um jogo pequeno como jogo da velha, ele sempre irá pegar a posição mais favorável no tabuleiro.</p>
 <br>
-  <img src="https://giphy.com/gifs/mgm-studios-hackers-mgm-studios-Qq7XAPjyzW1mu8B7VH?utm_source=media-link&utm_medium=landing&utm_campaign=Media%20Links&utm_term=https://giphy.com/" />
+  <img src="[https://giphy.com/gifs/mgm-studios-hackers-mgm-studios-Qq7XAPjyzW1mu8B7VH?utm_source=media-link&utm_medium=landing&utm_campaign=Media%20Links&utm_term=https://giphy.com/](https://media3.giphy.com/media/Qq7XAPjyzW1mu8B7VH/giphy.gif?cid=ecf05e478nfe2qib90gu359kr40fifq30ddxhjkx5vomm0e0&rid=giphy.gif&ct=g)" />
