@@ -9,10 +9,5 @@ Por exemplo, se um jogador ganha, recebe +1, o outro que perde recebe -1. </p>
 <p> Com o algoritmo MinMaxAlfaBeta usamos a busca em que a cada turno um jogador faz sua ação(min ou max) sendo max tentando o maior valor possível para o grau da árvore,
 e min tentando o menor possível.</p>
 <p> Dessa forma criamos um jogador "master" do qual NÃO É POSSÍVEL VENCER, pois para um jogo pequeno como jogo da velha, ele sempre irá pegar a posição mais favorável no tabuleiro.</p>
-
 <br>
-
-  <center>
-  
-  <img src="https://media.giphy.com/media/Qq7XAPjyzW1mu8B7VH/giphy.gif" width="380" height="450" align="left"/> 
-    </center>
+  <img src="https://media.giphy.com/media/Qq7XAPjyzW1mu8B7VH/giphy.gif"/> 
