@@ -9,6 +9,6 @@ Por exemplo, se um jogador ganha, recebe +1, o outro que perde recebe -1. </p>
 <p> Com o algoritmo MinMaxAlfaBeta usamos a busca em que a cada turno um jogador faz sua ação(min ou max) sendo max tentando o maior valor possível para o grau da árvore,
 e min tentando o menor possível.</p>
 <p> Dessa forma criamos um jogador "mestre" do qual NÃO É POSSÍVEL VENCER, pois para um jogo pequeno como jogo da velha, ele sempre irá pegar a posição mais favorável no tabuleiro. Logo o melhor resultado que o adversário da IA irá conseguir é o empate</p>
-<img src="./minmax.png" width="500" height="500"/>
+<img src="minmax.png" width="500" height="500"/>
 <br>
   <img src="https://c.tenor.com/GX5odnI5fgkAAAAC/idea-genius.gif" width="500" height="500">
