@@ -10,4 +10,4 @@ Por exemplo, se um jogador ganha, recebe +1, o outro que perde recebe -1. </p>
 e min tentando o menor possível.</p>
 <p> Dessa forma criamos um jogador "mestre" do qual NÃO É POSSÍVEL VENCER, pois para um jogo pequeno como jogo da velha, ele sempre irá pegar a posição mais favorável no tabuleiro. Logo o melhor resultado que o adversário da IA irá conseguir é o empate</p>
 <br>
-  <img src="https://tenor.com/voI4.gif](https://c.tenor.com/GX5odnI5fgkAAAAC/idea-genius.gif"/>
+  <img src="https://media.giphy.com/media/BmmfETghGOPrW/giphy.gif" />
