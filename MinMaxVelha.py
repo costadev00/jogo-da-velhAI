@@ -105,7 +105,7 @@ def minimax(state, depth, alpha, beta ,player):
                 best = score  # min value
     
     cont = cont + 1
-    print(cont)
+    # print(cont)
     return best
 
 
