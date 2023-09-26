@@ -30,6 +30,7 @@ def evaluate(state):
     return score
 
 
+#terminal states
 def wins(state, player):
 
     win_state = [
@@ -78,7 +79,42 @@ def set_move(x, y, player):
         return False
 
 
-def minimax(state, depth, alpha, beta ,player):
+# IMPLEMENTAÇÃO DO MINIMAX SEM A PODA ALPHA BETA
+
+# def minimax(state, depth, alpha, beta ,player):
+#     global cont 
+#     if player == COMP:
+#         best = [-1, -1, -infinity]
+#     else:
+#         best = [-1, -1, +infinity]
+
+#     if depth == 0 or game_over(state):
+#         score = evaluate(state)
+#         return [-1, -1, score]
+
+#     for cell in empty_cells(state):
+#         x, y = cell[0], cell[1]
+#         state[x][y] = player
+        
+#         score = minimax(state, depth - 1, alpha, beta , -player)
+#         state[x][y] = 0
+#         score[0], score[1] = x, y
+        
+#         if player == COMP:
+#             if score[2] > best[2]:
+#                 best = score  # max value
+#         else:
+#             if score[2] < best[2]:
+#                 best = score  # min value
+    
+#     cont = cont + 1
+#     print(cont)
+#     return best
+
+
+# IMPLEMENTAÇÃO DO MINIMAX COM A PODA ALPHA BETA
+
+def minimax(state, depth, alpha, beta, player):
     global cont 
     if player == COMP:
         best = [-1, -1, -infinity]
@@ -92,20 +128,26 @@ def minimax(state, depth, alpha, beta ,player):
     for cell in empty_cells(state):
         x, y = cell[0], cell[1]
         state[x][y] = player
-        
-        score = minimax(state, depth - 1, alpha, beta , -player)
+
+        score = minimax(state, depth - 1, alpha, beta, -player)
         state[x][y] = 0
         score[0], score[1] = x, y
-        
+
         if player == COMP:
             if score[2] > best[2]:
                 best = score  # max value
+            alpha = max(alpha, score[2])
+            if beta <= alpha:
+                break
         else:
             if score[2] < best[2]:
                 best = score  # min value
+            beta = min(beta, score[2])
+            if beta <= alpha:
+                break
     
     cont = cont + 1
-    # print(cont)
+    print(cont)
     return best
 
 
@@ -116,6 +158,13 @@ def clean():
     else:
         system('clear')
 
+def reset_board():
+    global board
+    board = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+    ]
 
 def render(state, c_choice, h_choice):
 
@@ -172,90 +221,114 @@ def human_turn(c_choice, h_choice,wannaPlay):
     }
 
     #clean()
-    print(f'Human turn [{h_choice}]')
+    print(f'Jogada do humano [{h_choice}]')
     render(board, c_choice, h_choice)
 
     while move < 1 or move > 9:
         try:
-            move = int(input('Use numpad (1..9): '))
+            move = int(input('Digite de (1..9): '))
             coord = moves[move]
             can_move = set_move(coord[0], coord[1], HUMAN)
 
             if not can_move:
-                print('Bad move')
+                print('Movimento inválido')
                 move = -1
         except (EOFError, KeyboardInterrupt):
-            print('Bye')
+            print('Adeus')
             exit()
         except (KeyError, ValueError):
-            print('Bad choice')
+            print('Escolha errada')
 
+
+# ...
 
 def main():
 
     clean()
-    h_choice = ''  # X or O
-    c_choice = ''  # X or O
-    first = ''  # if human is the first
+    h_choice = ''  # X ou O
+    c_choice = ''  # X ou O
+    first = ''  # se o humano começa
 
-    # Human chooses X or O to play
+    # O humano escolhe X ou O para jogar
     while h_choice != 'O' and h_choice != 'X':
         try:
             print('')
-            h_choice = input('Choose X or O\nChosen: ').upper()
-            wannaPlay = input("Wanna Play ?[y/n]:")
+            h_choice = input('Escolha X ou O\n: ').upper()
+            wannaPlay = input("Quer Jogar?[s/n]:")
         except (EOFError, KeyboardInterrupt):
-            print('Bye')
+            print('Tchau')
             exit()
         except (KeyError, ValueError):
-            print('Bad choice')
+            print('Escolha inválida\n')
+        else:
+            print('Escolha inválida digite algo válido\n')
 
-    # Setting computer's choice
+    # Definindo a escolha do computador
     if h_choice == 'X':
         c_choice = 'O'
     else:
         c_choice = 'X'
 
-    # Human may starts first
+    # O humano pode começar primeiro
     clean()
-    while first != 'Y' and first != 'N':
+    while first != 'S' and first != 'N':
         try:
-            first = input('First to start?[y/n]: ').upper()
+            first = input('O humano começa?[s/n]: ').upper()
         except (EOFError, KeyboardInterrupt):
-            print('Bye')
+            print('Tchau')
             exit()
         except (KeyError, ValueError):
-            print('Bad choice')
+            print('Escolha inválida')
 
-    # Main loop of this game
+    # Loop principal do jogo
     while len(empty_cells(board)) > 0 and not game_over(board):
         if first == 'N':
-            ai_turn(c_choice, h_choice,COMP)
+            ai_turn(c_choice, h_choice, COMP)
             first = ''
-        if wannaPlay == 'y' or wannaPlay == 'Y':            
+        if wannaPlay == 's' or wannaPlay == 'S':            
             human_turn(c_choice, h_choice, wannaPlay)
         else:
-            ai_turn(c_choice, h_choice,HUMAN)
+            ai_turn(c_choice, h_choice, HUMAN)
 
-        ai_turn(c_choice, h_choice,COMP)
+        ai_turn(c_choice, h_choice, COMP)
 
-    # Game over message
+    # Mensagem de fim de jogo
     if wins(board, HUMAN):
         clean()
-        print(f'Human turn [{h_choice}]')
+        print(f'Vez do Humano [{h_choice}]')
         render(board, c_choice, h_choice)
-        print('YOU WIN!')
+        print('VOCÊ VENCEU!')
     elif wins(board, COMP):
         clean()
-        print(f'Computer turn [{c_choice}]')
+        print(f'Vez do Computador [{c_choice}]')
         render(board, c_choice, h_choice)
-        print('YOU LOSE!')
+        print('VOCÊ PERDEU!')
     else:
         clean()
         render(board, c_choice, h_choice)
-        print('DRAW!')
+        print('EMPATE!')
+    while True:
+        print("Quer jogar novamente?")
+        restart = input("s/n:").upper()
+        while restart != 'S' and first != 'N':
+            try:
+                print("Quer jogar novamente?")
+                restart = input("s/n:").upper()
+            except (EOFError, KeyboardInterrupt):
+                print('Tchau')
+                exit()
+            except (KeyError, ValueError):
+                print('Escolha inválida')
+        if restart != 'S':
+            break
+        else:
+            reset_board()  # Reinicia o tabuleiro
+            main()
 
     exit()
+
+# ...
+
 
 
 if __name__ == '__main__':
