@@ -3,7 +3,7 @@
 
 <p>Este projeto implementa o clássico jogo da velha (Tic-Tac-Toe) com uma inteligência artificial que utiliza o algoritmo Minimax para tomar decisões. O jogo é jogado no terminal entre um jogador humano e o computador.</p>
 
-<h2>>Funcionamento</h2>
+<h2>Funcionamento</h2>
 <p>O objetivo do jogo da velha é alinhar três de suas peças em uma linha horizontal, vertical ou diagonal antes do oponente. No jogo implementado, você pode escolher ser "X" ou "O", e o computador assumirá a outra escolha.
 
 Aqui estão os principais recursos e detalhes de funcionamento do projeto:</p>
@@ -16,6 +16,16 @@ Aqui estão os principais recursos e detalhes de funcionamento do projeto:</p>
   <li>O jogo verifica vitórias, derrotas e empates, exibindo mensagens apropriadas.</li>
   <li>O jogador pode optar por jogar novamente após o término de uma partida.</li>
 </ul>
+
+<h2>Como Jogar</h2>
+<ol>
+  <li>Clone o repositório para sua máquina local.</li>
+  <li>Execute o arquivo MinMaxVelha.py, utilizando <i>python3 MinMaxVelha.py</i></li>
+  <li>Escolha ser "X" ou "O" como jogador humano.</li>
+  <li>Escolha se deseja começar primeiro ou não.</li>
+  <li>Use o teclado numérico para fazer suas jogadas (1 a 9) durante o jogo</li>
+  <li>Após o término da partida, você pode optar por jogar novamente.</li>
+</ol>
 
 <p>Basicamente ela explora todas as possibilidades de jogadas(na sua respectiva vez de jogar), e vê a melhor posição. 
 Para tornar o algoritmo mais eficiente foi utilizado o conceito de poda na busca(pruning the search on backtracking).
