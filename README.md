@@ -10,6 +10,6 @@ Por exemplo, se um jogador ganha, recebe +1, o outro que perde recebe -1. </p>
 e min tentando o menor possível.</p>
 <p> Dessa forma criamos um jogador "mestre" do qual NÃO É POSSÍVEL VENCER, pois para um jogo pequeno como jogo da velha, ele sempre irá pegar a posição mais favorável no tabuleiro. Logo o melhor resultado que o adversário da IA irá conseguir é o empate</p>
 <p> Segue abaixo o funcionamento do algoritmo minmax</p>
-<img src="minimax.png" width="1002" height="256"/>
+<img src="minimax.png" width="1600" height="1016"/>
 <br>
-  <img src="https://c.tenor.com/GX5odnI5fgkAAAAC/idea-genius.gif" width="1600" height="1000">
+  <img src="https://c.tenor.com/GX5odnI5fgkAAAAC/idea-genius.gif" width="500" height="400">
