@@ -12,4 +12,4 @@ e min tentando o menor possível.</p>
 <p> Segue abaixo o funcionamento do algoritmo minmax</p>
 <img src="minimax.png" width="1002" height="256"/>
 <br>
-  <img src="https://c.tenor.com/GX5odnI5fgkAAAAC/idea-genius.gif" width="500" height="500">
+  <img src="https://c.tenor.com/GX5odnI5fgkAAAAC/idea-genius.gif">
