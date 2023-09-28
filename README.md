@@ -3,6 +3,20 @@
 
 <p>Este projeto implementa o clássico jogo da velha (Tic-Tac-Toe) com uma inteligência artificial que utiliza o algoritmo Minimax para tomar decisões. O jogo é jogado no terminal entre um jogador humano e o computador.</p>
 
+<h2>>Funcionamento</h2>
+<p>O objetivo do jogo da velha é alinhar três de suas peças em uma linha horizontal, vertical ou diagonal antes do oponente. No jogo implementado, você pode escolher ser "X" ou "O", e o computador assumirá a outra escolha.
+
+Aqui estão os principais recursos e detalhes de funcionamento do projeto:</p>
+<ul>
+  <li>O jogador humano pode escolher ser "X" ou "O".</li>
+  <li>O computador assume a escolha restante.</li>
+  <li>O jogador humano decide se deseja começar primeiro ou não.</li>
+  <li>O algoritmo Minimax é usado pelo computador para tomar decisões de jogadas.</li>
+  <li>O jogo é renderizado no terminal, e o jogador humano faz suas jogadas usando o teclado numérico (1 a 9).</li>
+  <li>O jogo verifica vitórias, derrotas e empates, exibindo mensagens apropriadas.</li>
+  <li>O jogador pode optar por jogar novamente após o término de uma partida.</li>
+</ul>
+
 <p>Basicamente ela explora todas as possibilidades de jogadas(na sua respectiva vez de jogar), e vê a melhor posição. 
 Para tornar o algoritmo mais eficiente foi utilizado o conceito de poda na busca(pruning the search on backtracking).
 O algoritmo é de busca competitiva, isso em IA significa que em jogos mais comuns são aqueles de ambientes determinísticos, 
@@ -12,6 +26,6 @@ Por exemplo, se um jogador ganha, recebe +1, o outro que perde recebe -1. </p>
 e min tentando o menor possível.</p>
 <p> Dessa forma criamos um jogador "mestre" do qual NÃO É POSSÍVEL VENCER, pois para um jogo pequeno como jogo da velha, ele sempre irá pegar a posição mais favorável no tabuleiro. Logo o melhor resultado que o adversário da IA irá conseguir é o empate</p>
 <p> Segue abaixo o funcionamento do algoritmo minmax</p>
-<img src="minimax.png" width="1002" height="256"/>
+<img src="minimax.png"/>
 <br>
   <img src="https://c.tenor.com/GX5odnI5fgkAAAAC/idea-genius.gif" width="500" height="500">
