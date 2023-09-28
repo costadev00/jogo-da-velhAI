@@ -20,12 +20,13 @@ Aqui estão os principais recursos e detalhes de funcionamento do projeto:</p>
 <h2>Como Jogar</h2>
 <ol>
   <li>Clone o repositório para sua máquina local.</li>
-  <li>Execute o arquivo MinMaxVelha.py, utilizando <i>python3 MinMaxVelha.py</i></li>
+  <li>Execute o arquivo MinMaxVelha.py, utilizando: <b><i>python3 MinMaxVelha.py</i></b></li>
   <li>Escolha ser "X" ou "O" como jogador humano.</li>
   <li>Escolha se deseja começar primeiro ou não.</li>
   <li>Use o teclado numérico para fazer suas jogadas (1 a 9) durante o jogo</li>
   <li>Após o término da partida, você pode optar por jogar novamente.</li>
 </ol>
+<img src="run.gif"/>
 
 <p>Basicamente ela explora todas as possibilidades de jogadas(na sua respectiva vez de jogar), e vê a melhor posição. 
 Para tornar o algoritmo mais eficiente foi utilizado o conceito de poda na busca(pruning the search on backtracking).

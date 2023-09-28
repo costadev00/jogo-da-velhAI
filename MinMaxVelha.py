@@ -18,6 +18,7 @@ board = [
     [0, 0, 0],
 ]
 
+
 def evaluate(state):
 
     if wins(state, COMP):
@@ -30,7 +31,7 @@ def evaluate(state):
     return score
 
 
-#terminal states
+# terminal states
 def wins(state, player):
 
     win_state = [
@@ -82,7 +83,7 @@ def set_move(x, y, player):
 # IMPLEMENTAÇÃO DO MINIMAX SEM A PODA ALPHA BETA
 
 # def minimax(state, depth, alpha, beta ,player):
-#     global cont 
+#     global cont
 #     if player == COMP:
 #         best = [-1, -1, -infinity]
 #     else:
@@ -95,18 +96,18 @@ def set_move(x, y, player):
 #     for cell in empty_cells(state):
 #         x, y = cell[0], cell[1]
 #         state[x][y] = player
-        
+
 #         score = minimax(state, depth - 1, alpha, beta , -player)
 #         state[x][y] = 0
 #         score[0], score[1] = x, y
-        
+
 #         if player == COMP:
 #             if score[2] > best[2]:
 #                 best = score  # max value
 #         else:
 #             if score[2] < best[2]:
 #                 best = score  # min value
-    
+
 #     cont = cont + 1
 #     print(cont)
 #     return best
@@ -115,7 +116,7 @@ def set_move(x, y, player):
 # IMPLEMENTAÇÃO DO MINIMAX COM A PODA ALPHA BETA
 
 def minimax(state, depth, alpha, beta, player):
-    global cont 
+    global cont
     if player == COMP:
         best = [-1, -1, -infinity]
     else:
@@ -145,9 +146,9 @@ def minimax(state, depth, alpha, beta, player):
             beta = min(beta, score[2])
             if beta <= alpha:
                 break
-    
+
     cont = cont + 1
-    print(cont)
+    # print(cont)
     return best
 
 
@@ -158,6 +159,7 @@ def clean():
     else:
         system('clear')
 
+
 def reset_board():
     global board
     board = [
@@ -165,6 +167,7 @@ def reset_board():
         [0, 0, 0],
         [0, 0, 0],
     ]
+
 
 def render(state, c_choice, h_choice):
 
@@ -183,13 +186,13 @@ def render(state, c_choice, h_choice):
         print('\n' + str_line)
 
 
-def ai_turn(c_choice, h_choice,user):
+def ai_turn(c_choice, h_choice, user):
 
     depth = len(empty_cells(board))
     if depth == 0 or game_over(board):
         return
 
-    #clean()
+    # clean()
     print(f'Computer turn [{c_choice}]')
     render(board, c_choice, h_choice)
 
@@ -197,16 +200,14 @@ def ai_turn(c_choice, h_choice,user):
         x = choice([0, 1, 2])
         y = choice([0, 1, 2])
     else:
-        move = minimax(board, depth, -infinity, infinity , user)
+        move = minimax(board, depth, -infinity, infinity, user)
         x, y = move[0], move[1]
 
     set_move(x, y, user)
     time.sleep(1)
 
 
-
-
-def human_turn(c_choice, h_choice,wannaPlay):
+def human_turn(c_choice, h_choice, wannaPlay):
 
     depth = len(empty_cells(board))
     if depth == 0 or game_over(board):
@@ -220,7 +221,7 @@ def human_turn(c_choice, h_choice,wannaPlay):
         7: [2, 0], 8: [2, 1], 9: [2, 2],
     }
 
-    #clean()
+    # clean()
     print(f'Jogada do humano [{h_choice}]')
     render(board, c_choice, h_choice)
 
@@ -285,7 +286,7 @@ def main():
         if first == 'N':
             ai_turn(c_choice, h_choice, COMP)
             first = ''
-        if wannaPlay == 's' or wannaPlay == 'S':            
+        if wannaPlay == 's' or wannaPlay == 'S':
             human_turn(c_choice, h_choice, wannaPlay)
         else:
             ai_turn(c_choice, h_choice, HUMAN)
@@ -310,25 +311,17 @@ def main():
     while True:
         print("Quer jogar novamente?")
         restart = input("s/n:").upper()
-        while restart != 'S' and first != 'N':
-            try:
-                print("Quer jogar novamente?")
-                restart = input("s/n:").upper()
-            except (EOFError, KeyboardInterrupt):
-                print('Tchau')
-                exit()
-            except (KeyError, ValueError):
-                print('Escolha inválida')
-        if restart != 'S':
+        if restart == 'N':
+            print("Obrigado por jogar")
             break
-        else:
+        elif(restart == 'S'):
             reset_board()  # Reinicia o tabuleiro
             main()
-
+        else:
+            print("Escolha inválida")
     exit()
 
 # ...
-
 
 
 if __name__ == '__main__':
