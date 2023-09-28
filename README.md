@@ -26,7 +26,7 @@ Aqui estão os principais recursos e detalhes de funcionamento do projeto:</p>
   <li>Use o teclado numérico para fazer suas jogadas (1 a 9) durante o jogo</li>
   <li>Após o término da partida, você pode optar por jogar novamente.</li>
 </ol>
-<img src="run.gif" width="1500" height="1000"/>
+<img src="run.gif"/>
 
 <p>Basicamente ela explora todas as possibilidades de jogadas(na sua respectiva vez de jogar), e vê a melhor posição. 
 Para tornar o algoritmo mais eficiente foi utilizado o conceito de poda na busca(pruning the search on backtracking).
