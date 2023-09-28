@@ -1,5 +1,7 @@
-# jogo-da-velha
-Inteligência Artificial criada para jogar o "jogo da velha". Foi utilizado um algoritmo de busca competitiva, mais detalhadamente o algoritmo MinMaxAlfaBeta de teoria dos jogos.
+# jogo-da-velhAI
+<h2>Jogo da Velha com Algoritmo Minimax</h2>
+
+<p>Este projeto implementa o clássico jogo da velha (Tic-Tac-Toe) com uma inteligência artificial que utiliza o algoritmo Minimax para tomar decisões. O jogo é jogado no terminal entre um jogador humano e o computador.</p>
 
 <p>Basicamente ela explora todas as possibilidades de jogadas(na sua respectiva vez de jogar), e vê a melhor posição. 
 Para tornar o algoritmo mais eficiente foi utilizado o conceito de poda na busca(pruning the search on backtracking).
@@ -10,6 +12,6 @@ Por exemplo, se um jogador ganha, recebe +1, o outro que perde recebe -1. </p>
 e min tentando o menor possível.</p>
 <p> Dessa forma criamos um jogador "mestre" do qual NÃO É POSSÍVEL VENCER, pois para um jogo pequeno como jogo da velha, ele sempre irá pegar a posição mais favorável no tabuleiro. Logo o melhor resultado que o adversário da IA irá conseguir é o empate</p>
 <p> Segue abaixo o funcionamento do algoritmo minmax</p>
-<img src="minimax.png" />
+<img src="minimax.png" width="1002" height="256"/>
 <br>
-  <img src="https://c.tenor.com/GX5odnI5fgkAAAAC/idea-genius.gif" width="500" height="400">
+  <img src="https://c.tenor.com/GX5odnI5fgkAAAAC/idea-genius.gif" width="500" height="500">
